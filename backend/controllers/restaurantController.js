@@ -22,6 +22,12 @@ const createRestaurant = asyncHandler(async (req, res) => {
   }
 });
 
+const getRestaurant = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  const restaurant = await Restaurant.findById(id);
+  res.json(restaurant);
+});
+
 // update restaurant controller
 const updateRestaurant = asyncHandler(async (req, res) => {
   const { name, address, city, state, country, image } = req.body;
@@ -87,4 +93,9 @@ const insertSampleData = async (req, res) => {
 
 // insertSampleData();
 
-module.exports = { createRestaurant, updateRestaurant, listOfRestaurant };
+module.exports = {
+  createRestaurant,
+  getRestaurant,
+  updateRestaurant,
+  listOfRestaurant,
+};

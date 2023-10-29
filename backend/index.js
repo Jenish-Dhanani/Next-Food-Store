@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 //main route
-app.use("/v1", indexRouter);
+app.use("/api/v1", indexRouter);
 
 //error handling middleware
 app.use(notFound);

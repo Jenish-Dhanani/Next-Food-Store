@@ -6,7 +6,12 @@ const foodItemSchema = mongoose.Schema(
     description: { type: String, required: true, text: true },
     category: { type: String, required: true },
     price: { type: Number, required: true },
-    availability: { type: String, enum: ["Yes", "No"], required: true },
+    availability: {
+      type: String,
+      enum: ["Yes", "No"],
+      default: "Yes",
+      required: true,
+    },
     images: [{ type: String }],
     restaurantId: {
       type: ObjectId,
