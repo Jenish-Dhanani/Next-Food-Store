@@ -15,8 +15,10 @@ const SearchBar = () => {
   }, 300); // Adjust the delay (in milliseconds) according to your needs
 
   useEffect(() => {
+    // Clear the search query when the component unmounts
     return () => dispatch(setSearchQuery(""));
   }, []);
+
   return (
     <Input
       onChange={(e) => handleSearch(e.target.value)}

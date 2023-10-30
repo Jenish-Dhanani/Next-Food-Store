@@ -49,7 +49,7 @@ const FoodCard = ({
     (el, index) => `Slide ${index + 1}`
   );
   return (
-    <Card shadow="sm" isPressable onPress={() => console.log("item pressed")}>
+    <Card shadow="sm" className="select-none">
       <CardBody className="overflow-visible p-0">
         <Image
           shadow="sm"
@@ -61,14 +61,14 @@ const FoodCard = ({
         />
       </CardBody>
       <CardFooter className="flex flex-col gap-2">
-        <div className="w-full flex text-small justify-between gap-2 text-left">
+        <div className="w-full flex text-small justify-between items-center gap-2 text-left">
           <b>{name}</b>
           <p className="text-default-500 whitespace-nowrap">
             ₹ <span className="text-2xl font-semibold">{price}</span>
           </p>
         </div>
         <div className="w-full text-small text-left">
-          <p className="text-default-500">{description}</p>
+          <p className="text-default-500 line-clamp-3">{description}</p>
         </div>
         <div className="w-full text-small text-left">
           <p className="text-default-500">Category: {category}</p>

@@ -15,7 +15,9 @@ const FoodCardWrapper = () => {
   } = useSelector((state) => state.foodItem);
 
   useEffect(() => {
-    dispatch(foodItems());
+    if (searchQuery.trim() !== "") {
+      dispatch(foodItems());
+    }
   }, [searchQuery]);
 
   if (!searchQuery) {
