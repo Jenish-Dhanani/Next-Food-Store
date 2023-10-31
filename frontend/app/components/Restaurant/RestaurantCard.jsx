@@ -18,6 +18,8 @@ const RestaurantCard = ({
   state,
   country,
   image,
+  distance,
+  duration,
   dummy = false,
 }) => {
   if (dummy) {
@@ -55,6 +57,16 @@ const RestaurantCard = ({
         <p className="text-tiny text-white/60 uppercase font-bold">{city}</p>
         <p className="text-tiny text-white/60 uppercase font-bold">{state}</p>
         <p className="text-tiny text-white/60 uppercase font-bold">{country}</p>
+        {distance && (
+          <p className="text-tiny text-green-400/60 uppercase font-bold">
+            {distance.text} Away
+          </p>
+        )}
+        {duration && (
+          <p className="text-tiny text-yellow-400/60 uppercase font-bold">
+            {duration.text} Est.
+          </p>
+        )}
       </CardHeader>
       <div className="absolute top-0 z-10 h-full w-full bg-black bg-opacity-70"></div>
       <Image

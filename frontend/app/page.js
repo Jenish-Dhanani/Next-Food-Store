@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import FoodItemForm from "./components/Food/FoodItemForm";
 import AddEditFoodItem from "./components/Food/AddEditFoodItem";
+import GeoLocation from "./components/GeoLocation";
 
 export default function Home() {
   const { push } = useRouter();
@@ -30,6 +31,9 @@ export default function Home() {
         </div>
         <div>
           <FoodCardWrapper />
+        </div>
+        <div>
+          <GeoLocation />
         </div>
         <div>
           <RestaurantWrapper />

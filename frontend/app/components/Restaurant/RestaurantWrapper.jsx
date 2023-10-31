@@ -20,13 +20,13 @@ const RestaurantWrapper = () => {
         Explore curated lists of top restaurants
       </p>
       {loading ? (
-        <div className="gap-6 grid grid-cols-12 grid-rows-2">
+        <div className="gap-6 grid grid-cols-12">
           {[0, 1, 2].map((i) => {
             return <RestaurantCard key={i} dummy />;
           })}
         </div>
       ) : restaurants.length ? (
-        <div className="gap-6 grid grid-cols-12 grid-rows-2">
+        <div className="gap-6 grid grid-cols-12">
           {restaurants.map((i) => {
             return <RestaurantCard key={i._id} {...i} />;
           })}
