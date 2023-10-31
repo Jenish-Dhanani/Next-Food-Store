@@ -10,11 +10,7 @@ export const registerUser = createAsyncThunk(
           "Content-Type": "application/json",
         },
       };
-      await api.post(
-        `/api/v1/auth/signup`,
-        { fname, lname, email, password },
-        config
-      );
+      await api.post(`/auth/signup`, { fname, lname, email, password }, config);
     } catch (error) {
       // return custom error message from backend if present
       if (error.response && error.response.data.message) {
@@ -37,7 +33,7 @@ export const signinUser = createAsyncThunk(
         },
       };
       const { data } = await api.post(
-        `/api/v1/auth/login`,
+        `/auth/login`,
         { email, password },
         config
       );

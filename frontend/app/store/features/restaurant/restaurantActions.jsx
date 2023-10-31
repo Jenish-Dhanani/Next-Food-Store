@@ -13,7 +13,7 @@ export const restaurantList = createAsyncThunk(
           Authorization: `Bearer ${auth.userToken}`,
         },
       };
-      const { data } = await api.get(`/api/v1/restaurant/`, config);
+      const { data } = await api.get(`/restaurant/`, config);
       return data;
     } catch (error) {
       // return custom error message from backend if present
@@ -37,7 +37,7 @@ export const restaurantView = createAsyncThunk(
           Authorization: `Bearer ${auth.userToken}`,
         },
       };
-      const { data } = await api.get(`/api/v1/restaurant/${id}`, config);
+      const { data } = await api.get(`/restaurant/${id}`, config);
       return data;
     } catch (error) {
       // return custom error message from backend if present

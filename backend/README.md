@@ -1,6 +1,6 @@
-## To Run Frontend
+## To Run Backend
 
-1. Go to the frontend directory and run the following command to install the required dependency:
+1. Go to the backend directory and run the following command to install the required dependency:
 
    ```bash
    npm install
@@ -16,4 +16,12 @@
    npm run dev
    # or
    yarn dev
+   ```
+
+4. For production, use the following command:
+
+   ```bash
+   npm start
+   # or
+   yarn start
    ```

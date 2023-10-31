@@ -17,9 +17,9 @@ export const foodItems = createAsyncThunk(
 
       let url;
       if (id) {
-        url = `/api/v1/food/by-restaurant/${id}`;
+        url = `/food/by-restaurant/${id}`;
       } else {
-        url = `/api/v1/food/`;
+        url = `/food/`;
       }
 
       // Append searchQuery as a query parameter
@@ -50,7 +50,7 @@ export const foodItemCreate = createAsyncThunk(
         },
       };
 
-      const url = `/api/v1/food/`;
+      const url = `/food/`;
 
       const { data } = await api.post(url, payload, config);
       return data;
@@ -75,7 +75,7 @@ export const foodItemEdit = createAsyncThunk(
         },
       };
 
-      const url = `/api/v1/food/${payload.id}`;
+      const url = `/food/${payload.id}`;
 
       const { data } = await api.put(url, payload.data, config);
       console.log(data);
@@ -101,7 +101,7 @@ export const foodItemDelete = createAsyncThunk(
         },
       };
 
-      const url = `/api/v1/food/${payload}`;
+      const url = `/food/${payload}`;
 
       const { data } = await api.delete(url, {}, config);
       console.log(data);
